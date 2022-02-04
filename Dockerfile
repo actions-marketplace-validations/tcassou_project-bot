@@ -6,4 +6,4 @@ RUN pip3 install --upgrade pip && pip3 install -r requirements.txt
 
 # Copy source files
 COPY ./src /app
-CMD [ "python", "/app/main.py" ]
+CMD python /app/main.py
