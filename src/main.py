@@ -25,8 +25,8 @@ def run_query(query):
 if __name__ == "__main__":
 
     print(os.environ["GITHUB_EVENT_PATH"])
-    with open(os.environ["GITHUB_EVENT_PATH"], "rb") as event_file:
-        event = json.loads(event_file)
+    with open(os.environ["GITHUB_EVENT_PATH"], "r") as event_file:
+        event = json.loads(event_file.read())
 
     project_url = os.environ["INPUT_PROJECT_URL"]
     pattern = r"^https:\/\/github.com\/(orgs|users)\/(.+)\/projects\/([0-9]+)"
