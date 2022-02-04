@@ -10,11 +10,6 @@ ENTITIES = {
 }
 
 
-# Actions context
-REPOSITORY = "data-questions"
-ISSUE_NUMBER = 6
-
-
 def run_query(query):
     response = requests.post(
         os.environ["GITHUB_GRAPHQL_URL"],
@@ -27,6 +22,7 @@ def run_query(query):
 
 if __name__ == "__main__":
 
+    print(os.environ["GITHUB_EVENT_PATH"])
     with open(os.environ["GITHUB_EVENT_PATH"], "rb") as event_file:
         event = json.loads(event_file)
 
