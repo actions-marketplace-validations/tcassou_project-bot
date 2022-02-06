@@ -1,0 +1,37 @@
+name: Lint and Test
+
+on: [push]
+
+jobs:
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Python 3.8.5
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8.5
+    - name: Install Python Dependencies
+      run: |
+        pip install --upgrade pip setuptools
+        pip install -r requirements_dev.txt
+    - name: Lint with pre-commit
+      run: script -e -c "pre-commit run --all-files"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Python 3.8.5
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8.5
+    - name: Install Python Dependencies
+      run: |
+        pip install --upgrade pip setuptools
+        pip install -r requirements_dev.txt
+    - name: Run Unit Tests
+      env:
+        ENV: test
+      run: script -e -c "python -m pytest v tests"
