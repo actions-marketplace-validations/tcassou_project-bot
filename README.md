@@ -1,5 +1,5 @@
 # Project Bot Github Action
-[![Build](https://github.com/tcassou/project-bot/workflows/Lint%20and%20Test/badge.svg)](https://github.com/tcassou/project-bot/actions)
+[![Lint and Test](https://github.com/tcassou/project-bot/actions/workflows/lint_test.yaml/badge.svg)](https://github.com/tcassou/project-bot/actions)
 
 This Github Action automated the the addition of issues to a given Github Project.
 It uses the Github GraphQL API under the hood, and is compatible with [the recently revamped projects](https://docs.github.com/en/issues/trying-out-the-new-projects-experience/about-projects).
