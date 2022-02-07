@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 import logging
 
-from .github_api import GithubAPI
-from .github_env import GithubEnv
+try:
+    # Github actions are run as a script, and relative imports won't work
+    from github_api import GithubAPI
+    from github_env import GithubEnv
+except ModuleNotFoundError:
+    # tests are run from another module, and since we can't use relative imports, we have to use this workaround
+    from app.github_api import GithubAPI
+    from app.github_env import GithubEnv
 
 logging.getLogger().setLevel(logging.INFO)
 
