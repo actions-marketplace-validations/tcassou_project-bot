@@ -16,7 +16,7 @@ logging.getLogger().setLevel(logging.INFO)
 def run() -> None:
     """Run the Github action."""
     event_name = GithubEnv.get_event_name()
-    if event_name != "issue":
+    if event_name != "issues":
         raise NotImplementedError(f"`{event_name}` events not supported!")
 
     logging.info("Reading Github webhook event from local files...")
