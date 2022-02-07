@@ -1,5 +1,8 @@
-name: 'Project Bot'
+name: 'Github Project Bot'
 description: 'Automating the attachment of Issues to Projects'
+branding:
+  icon: 'send'
+  color: 'blue'
 inputs:
   project_url:
     description: 'URL of the Github project that issues should be added to'
