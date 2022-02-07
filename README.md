@@ -1,4 +1,4 @@
-# Project Bot Github Action
+# Issues to Project Github Action
 [![Lint and Test](https://github.com/tcassou/project-bot/actions/workflows/lint_test.yaml/badge.svg)](https://github.com/tcassou/project-bot/actions)
 
 This Github Action automated the the addition of issues to a given Github Project.
