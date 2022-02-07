@@ -1,4 +1,4 @@
-name: 'Github Project Bot'
+name: 'Issues to Project'
 description: 'Automating the attachment of Issues to Projects'
 branding:
   icon: 'send'
