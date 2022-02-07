@@ -17,7 +17,7 @@ def run() -> None:
     """Run the Github action."""
     event_name = GithubEnv.get_event_name()
     if event_name != "issue":
-        raise NotImplementedError("This Github Action only supports `issue` events!")
+        raise NotImplementedError(f"`{event_name}` events not supported!")
 
     logging.info("Reading Github webhook event from local files...")
     event = GithubEnv.get_event()
