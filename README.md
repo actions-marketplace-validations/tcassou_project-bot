@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Assign new issues to the project
-      uses: tcassou/project-bot@1.0.0
+      uses: tcassou/project-bot@2.0.0
       with:
         project_url: 'https://github.com/orgs/foo/projects/123'
 ```
