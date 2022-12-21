@@ -42,8 +42,14 @@ class GithubAPI:
             json={"query": query},
             headers={"Authorization": f"token {cls.TOKEN}"},
         )
+        # raise exceptions based on status code
         response.raise_for_status()
-        return response.json()
+        # raise exceptions based on response content
+        response = response.json()
+        if "errors" in response:
+            raise ValueError(response["errors"][0]["message"])
+
+        return response
 
     @classmethod
     def get_project_id(cls, project_url: str) -> str:
