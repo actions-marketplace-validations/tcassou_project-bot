@@ -59,14 +59,14 @@ class GithubAPI:
             f"""
                 {{
                     {entity_type}(login: "{entity_name}") {{
-                        projectNext(number: {project_number}) {{
+                        projectV2(number: {project_number}) {{
                             id
                         }}
                     }}
                 }}
             """
         )
-        return response["data"][entity_type]["projectNext"]["id"]
+        return response["data"][entity_type]["projectV2"]["id"]
 
     @classmethod
     def add_issue_to_project(cls, issue_id: str, project_id: str) -> None:
@@ -74,8 +74,8 @@ class GithubAPI:
         cls._post(
             f"""
                 mutation {{
-                    addProjectNextItem(input: {{projectId: "{project_id}" contentId: "{issue_id}"}}) {{
-                        projectNextItem {{
+                    addProjectV2ItemById(input: {{projectId: "{project_id}" contentId: "{issue_id}"}}) {{
+                        item {{
                             id
                         }}
                     }}
